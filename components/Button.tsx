@@ -1,7 +1,7 @@
-import * as React from 'react'
-
-type Props = {
-  buttonText: string
-}
-
-export default (props: Props) => <button>{props.buttonText}</button>
+export default (
+  {
+      buttonText,
+  }:{
+      buttonText: boolean
+ },
+) => <button type="button">{buttonText}</button>;
