@@ -1,5 +1,5 @@
 # Test
-FROM node:12.8-alpine as test-target
+FROM node:14.15.5-alpine3.10 as test-target
 ENV NODE_ENV=development
 ENV PATH $PATH:/usr/src/app/node_modules/.bin
 
@@ -25,7 +25,7 @@ RUN npm run build
 RUN npm prune --production
 
 # Archive
-FROM node:12.8-alpine as archive-target
+FROM node:14.15.5-alpine3.10 as archive-target
 ENV NODE_ENV=production
 ENV PATH $PATH:/usr/src/app/node_modules/.bin
 
