@@ -1,17 +1,14 @@
 # Next.js in Docker Example
 
+Original work by KConner. Check out his repo here: https://github.com/kconner/next-js-in-docker-example
 This repository demonstrates a Next.js web application that uses Docker for both deployment and a development environment.
-
-Check my commit messages to see the tutorial articles and documentation I followed as I built this up piece by piece.
-
-## Progress
+## Features
 
 - [x] Node app in Docker
 - [x] Debuggable in VS Code
 - [x] Development and Release container variants
 - [x] Next.js
 - [x] TypeScript
-- [x] Allow launching Storybook at the test stage
 - [x] Allow running CI tools at the test stage
 - [x] Allow debugging individual tests
 - [x] Use multi-stage Docker builds for compact release artifacts
@@ -19,8 +16,6 @@ Check my commit messages to see the tutorial articles and documentation I follow
 - [x] Deploy to Kubernetes with kubectl
 - [x] Demonstrate a complete CI workflow
 - [x] Allow running CI tools against a built release artifact to validate it
-- [ ] Deploy with Helm instead of kubectl
-
 ## How this setup uses Docker
 
 - `Dockerfile` describes a multi-stage build.
@@ -39,9 +34,8 @@ Check my commit messages to see the tutorial articles and documentation I follow
     - Canonically, `docker-compose up` will start debug mode too. Add `--build` if you have made changes since last time.
     - In VS Code's activity bar, click the Docker icon to view running containers.
     - Visit localhost:3000 to view the site.
-    - Visit localhost:6006 to view Storybook. It may take a moment for the Storybook server to start after docker-compose launches its container.
     - Save a code file to hot-reload the browser.
-    - Select Start Debugging from the Debug menu to attach the debugger. Then click in VS Code's gutter to set breakpoints. In this example, only the web server is debuggable, not Storybook.
+    - Select Start Debugging from the Debug menu to attach the debugger. Then click in VS Code's gutter to set breakpoints.
     - To stop, right-click again and select Compose Down, or use `docker-compose down`.
 - In addition to the Docker debugger attachment launcher, VS Code launchers also exist for debugging locally, including the web server, all unit tests, and a single unit test file.
 - To build, test, and deploy in a continuous integration environment run `./scripts/run-continuous-integration.sh --image <name> --version <version>`.
